@@ -84,7 +84,52 @@
 		</div>
 	</div>
 	<script>
-	  // your solution here
+	  // var rotateBox = document.getElementById('rotate-box');
+    var pressBox = document.getElementById('press-box');
+    var pressMC = new Hammer(pressBox);
+    pressMC.on("press", function(ev){
+      pressBox.textContent = "Pressed!";
+      // console.log("has been pressed")
+      
+    })
+    
+    var panBox = document.getElementById('pan-box');
+    var panMC = new Hammer(panBox);
+    panMC.on("pan", function(ev){
+      panBox.textContent = "Panned!";
+    })
+    
+    var tapBox = document.getElementById('tap-box');
+    var tapMC = new Hammer(tapBox);
+    tapMC.on("tap", function(ev){
+      tapBox.textContent = "Tapped!";
+    })
+    
+    var swipeBox = document.getElementById('swipe-box');
+    var swipeMC = new Hammer(swipeBox);
+    swipeMC.on("swipe", function(ev){
+      swipeBox.textContent = "Swiped!"
+    })
+    
+    var pinchBox = document.getElementById('pinch-box');
+    var pinchMC = new Hammer(pinchBox);
+    var pinch = new Hammer.Pinch();
+    pinchMC.add([pinch]);
+    pinchMC.on("pinch", function(ev){
+      pinchBox.textContent = "Pinched!";
+    })
+    
+    
+    
+    var rBox = document.getElementById('rotate-box');
+    var rMC = new Hammer(rBox);
+    var rotate = new Hammer.Rotate();
+    rMC.add([rotate]);
+    rMC.on("rotate", function(ev){
+      rBox.textContent = "Rotated";
+    })
+    
+    
   </script>
 </body>
 </html>
